@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Page</title>
+    <style>
+        body{
+            margin: 20px 600px;
+        }
+        form{
+            background-color: lightskyblue;
+            border-radius: 20px;
+            padding: 20px 190px 20px 215px;
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }
+        h3{
+            color:dimgray;
+            margin-bottom: -10px;
+        }
+        button{
+            margin: 0% 40%;
+            background-color: green;
+            color: white;
+            border: none;
+        }
+    </style>
+  </head>
+  <body>
+    <form>
+        <h1>Quiz</h1><br>
+      <h3>Question 1</h3>
+      <p><b>What is the capital of France?</b></p>
+      <label><input type="radio" name="q1" value="a">A. Paris </label><br>
+      <label><input type="radio" name="q1" value="b">B. Madrid </label><br>
+      <label><input type="radio" name="q1" value="c">C. Rome </label><br>
+      <label><input type="radio" name="q1" value="d">D. France </label><br><br>
+      
+      <h3>Question 2</h3>
+      <p><b>What is the tallest mountain in the world?</b></p>
+      <label><input type="radio" name="q2" value="a">A. Mount Kilimanjaro </label><br>
+      <label><input type="radio" name="q2" value="b">B. Mount Everest </label><br>
+      <label><input type="radio" name="q2" value="c">C. Mount Fuji </label><br>
+      <label><input type="radio" name="q2" value="d">D. Mount K2</label><br><br>
+      
+      <h3>Question 3</h3>
+      <p><b>10 + 20 = ?</b></p>
+      <label><input type="radio" name="q3" value="a">A. 10 </label><br>
+      <label><input type="radio" name="q3" value="b">B. 20 </label><br>
+      <label><input type="radio" name="q3" value="c">C. 30 </label><br>
+      <label><input type="radio" name="q3" value="d">D. 10 </label><br><br>
+
+      <h3>Question 4</h3>
+      <p><b>What is the largest country in the world?</b></p>
+      <label><input type="radio" name="q4" value="a">A. China </label><br>
+      <label><input type="radio" name="q4" value="b">B. United States </label><br>
+      <label><input type="radio" name="q4" value="c">C. Russia </label><br>
+      <label><input type="radio" name="q4" value="d">D. India </label><br><br>
+
+      <h3>Question 5</h3>
+      <p><b>'10' + '20' = ?</b></p>
+      <label><input type="radio" name="q5" value="a">A. 30 </label><br>
+      <label><input type="radio" name="q5" value="b">B. '30' </label><br>
+      <label><input type="radio" name="q5" value="c">C. '1020' </label><br>
+      <label><input type="radio" name="q5" value="d">D. 10 </label><br><br>
+
+      <h3>Question 6</h3>
+      <p><b>What is my name?</b></p>
+      <label><input type="radio" name="q6" value="a">A. Dharitri </label><br>
+      <label><input type="radio" name="q6" value="b">B. xyz </label><br>
+      <label><input type="radio" name="q6" value="c">C. abc </label><br>
+      <label><input type="radio" name="q6" value="d">D. pqr </label><br><br>
+
+      <h3>Question 7</h3>
+      <p><b>How many fingers present in my left hand?</b></p>
+      <label><input type="radio" name="q7" value="a">A. 6 </label><br>
+      <label><input type="radio" name="q7" value="b">B. 5 </label><br>
+      <label><input type="radio" name="q7" value="c">C. 4 </label><br>
+      <label><input type="radio" name="q7" value="d">D. 10 </label><br><br>
+
+      <h3>Question 8</h3>
+      <p><b>Where am I working as SD intern?</b></p>
+      <label><input type="radio" name="q8" value="a">A. Brainerhub </label><br>
+      <label><input type="radio" name="q8" value="b">B. IBM </label><br>
+      <label><input type="radio" name="q8" value="c">C. none </label><br>
+      <label><input type="radio" name="q8" value="d">D. all </label><br><br>
+
+      <h3>Question 9</h3>
+      <p><b>How many days are there in a week?</b></p>
+      <label><input type="radio" name="q9" value="a">A. 6 </label><br>
+      <label><input type="radio" name="q9" value="b">B. 7 </label><br>
+      <label><input type="radio" name="q9" value="c">C. 5 </label><br>
+      <label><input type="radio" name="q9" value="d">D. 10 </label><br><br>
+
+      <h3>Question 10</h3>
+      <p><b>10 + 20 - (2 + 3) -10 = ?</b></p>
+      <label><input type="radio" name="q10" value="a">A. 25 </label><br>
+      <label><input type="radio" name="q10" value="b">B. 10 </label><br>
+      <label><input type="radio" name="q10" value="c">C. 15 </label><br>
+      <label><input type="radio" name="q10" value="d">D. 20 </label><br><br>
+      
+      <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <p id="score"></p>
+    <script>
+        // Store the correct answers for each question
+        const answers = ['a', 'b', 'c', 'c', 'c', 'a', 'b', 'a', 'b', 'c'];
+        // Check the user's answers and display the score
+        function checkAnswers() {
+          let score = 0;
+          const form = document.querySelector('form');
+          const inputs = form.querySelectorAll('input[type=radio]:checked');
+         
+            if(inputs.length != answers.length){
+                alert("Please answer all the questions!");
+            }
+            else{
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i].value === answers[i]) {
+                    score++;
+                    }
+                }
+            document.getElementById('score').textContent = alert("Score"+": "+score+"/"+answers.length);
+            }
+        }
+      </script>
+  </body>
+</html>
